@@ -42,7 +42,7 @@ namespace VSClient
             strStu = new string[str.Length];
             for (int i = 0; i < str.Length; i++)
             {
-                strStu[i] = str[i];
+                strStu[i] = str[i].Trim();
             }
         }
 
@@ -51,7 +51,7 @@ namespace VSClient
             strText = new string[str.Length];
             for (int i = 0; i < str.Length; i++)
             {
-                strText[i] = str[i];
+                strText[i] = str[i].Trim();
             }
         }
 

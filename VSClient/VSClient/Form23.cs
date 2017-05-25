@@ -41,7 +41,7 @@ namespace VSClient
             strTea = new string[str.Length];
             for (int i = 0; i < str.Length; i++)
             {
-                strTea[i] = str[i];
+                strTea[i] = str[i].Trim();
             }
         }
 

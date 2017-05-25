@@ -19,7 +19,6 @@ D:\-\VSClient\VSClient\obj\Debug\VSClient.exe
 D:\-\VSClient\VSClient\obj\Debug\VSClient.pdb
 D:\-\VSClient\VSClient\bin\Debug\VSClient.exe
 D:\-\VSClient\VSClient\bin\Debug\VSClient.pdb
-D:\-\VSClient\VSClient\obj\Debug\VSClient.csprojResolveAssemblyReference.cache
 D:\-\VSClient\VSClient\obj\Debug\VSClient.Form1.resources
 D:\-\VSClient\VSClient\obj\Debug\VSClient.Form21.resources
 D:\-\VSClient\VSClient\obj\Debug\VSClient.Form211.resources

@@ -34,7 +34,7 @@ namespace VSClient
             strStu = new string[str.Length];
             for (int i = 0; i < str.Length; i++)
             {
-                strStu[i] = str[i];
+                strStu[i] = str[i].Trim();
             }
         }
 
