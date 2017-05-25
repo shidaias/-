@@ -30,3 +30,4 @@ D:\-\VSClient\VSClient\obj\Debug\VSClient.Form231.resources
 D:\-\VSClient\VSClient\obj\Debug\VSClient.Form232.resources
 D:\-\VSClient\VSClient\obj\Debug\VSClient.Properties.Resources.resources
 D:\-\VSClient\VSClient\obj\Debug\VSClient.csproj.GenerateResource.Cache
+D:\-\VSClient\VSClient\obj\Debug\VSClient.csprojResolveAssemblyReference.cache

@@ -37,7 +37,16 @@ namespace VSClient
         }
 
         private static string[] strTea;
+        private static string[] strStu;
 
+        public static void getStrStu(string[] str)
+        {
+            strStu = new string[str.Length];
+            for (int i = 0; i < str.Length; i++)
+            {
+                strStu[i] = str[i].Trim();
+            }
+        }
         public static void getStrTea(string[] str)
         {
             strTea = new string[str.Length];
@@ -158,5 +167,22 @@ namespace VSClient
             }
             button5.Enabled = false;
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string str = "查询学生@学生@" + label2.Text.Trim();
+            Form1.ClientSendMsg(str);
+            button7.Enabled = true;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            dataGridView2.Rows.Clear();
+            for (int i = 2; i + 1 < strStu.Length; i += 2)
+            {
+                dataGridView2.Rows.Add(strStu[i], strStu[i + 1]);
+            }
+            button7.Enabled = false;
+        }       
     }
 }

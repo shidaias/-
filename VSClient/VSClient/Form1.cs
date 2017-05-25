@@ -241,6 +241,11 @@ namespace VSClient
                     Form231.dataGridView1.Rows.Add(str[i], str[i + 1], str[i + 2]);
                 }*/
             }
+            else if (str[1].Equals("学生"))
+            {
+                Form21.getStrStu(str);
+                MessageBox.Show("查询成功");
+            }
             else
             {
                 MessageBox.Show("查询失败");
