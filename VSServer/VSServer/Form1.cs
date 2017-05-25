@@ -211,6 +211,10 @@ namespace VSServer
                         {
                             x = "查询学生@管理员" + StuSelectAbm(str);
                         }
+                        else if (str[1].Equals("学生"))
+                        {
+                            x = "查询学生@学生" + StuSelectStu(str[2]);
+                        }
                     }
                     else if (str[0].Equals("查询教师"))
                     {
@@ -264,6 +268,9 @@ namespace VSServer
             }
         }
 
+        /// <summary>
+        /// 生成考卷
+        /// </summary>
         private string setText(string str)
         {
             SqlConnection myCon = new SqlConnection
@@ -817,6 +824,35 @@ namespace VSServer
                 myCon.Close();
                 return false;
             }
+        }
+
+        /// <summary>
+        /// 查询学生 学生
+        /// </summary>
+        private string StuSelectStu(string str)
+        {
+            SqlConnection myCon = new SqlConnection
+                    ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
+            myCon.Open();
+            string select = "";
+            string sqlStr = "select 学号, 姓名 from 学生 where 班级 in ( select 班级 from 学生 where 学号 = '" + str + "')";
+            SqlDataAdapter da = new SqlDataAdapter(sqlStr, myCon);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            DataTable dt = ds.Tables[0];
+            try
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    select += "@" + dt.Rows[i]["学号"].ToString() + "@" + dt.Rows[i]["姓名"].ToString();
+                }
+            }
+            catch
+            {
+                select = "@False";
+            }
+            myCon.Close();
+            return select;
         }
 
         /// <summary>
