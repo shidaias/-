@@ -1,0 +1,16 @@
+D:\VSProject\project\VSClient\VSClient\bin\Debug\VSClient.exe.config
+D:\VSProject\project\VSClient\VSClient\bin\Debug\VSClient.exe
+D:\VSProject\project\VSClient\VSClient\bin\Debug\VSClient.pdb
+D:\VSProject\project\VSClient\VSClient\obj\Debug\VSClient.Form1.resources
+D:\VSProject\project\VSClient\VSClient\obj\Debug\VSClient.Properties.Resources.resources
+D:\VSProject\project\VSClient\VSClient\obj\Debug\VSClient.csproj.GenerateResource.Cache
+D:\VSProject\project\VSClient\VSClient\obj\Debug\VSClient.exe
+D:\VSProject\project\VSClient\VSClient\obj\Debug\VSClient.pdb
+D:\VSProject\project\VSClient\VSClient\obj\Debug\VSClient.Form21.resources
+D:\VSProject\project\VSClient\VSClient\obj\Debug\VSClient.Form22.resources
+D:\VSProject\project\VSClient\VSClient\obj\Debug\VSClient.Form23.resources
+D:\VSProject\project\VSClient\VSClient\obj\Debug\VSClient.Form221.resources
+D:\VSProject\project\VSClient\VSClient\obj\Debug\VSClient.Form222.resources
+D:\VSProject\project\VSClient\VSClient\obj\Debug\VSClient.Form231.resources
+D:\VSProject\project\VSClient\VSClient\obj\Debug\VSClient.Form232.resources
+D:\VSProject\project\VSClient\VSClient\obj\Debug\VSClient.Form211.resources

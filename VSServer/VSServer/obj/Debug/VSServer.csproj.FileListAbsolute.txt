@@ -1,0 +1,8 @@
+D:\VSProject\project\VSServer\VSServer\bin\Debug\VSServer.exe.config
+D:\VSProject\project\VSServer\VSServer\bin\Debug\VSServer.exe
+D:\VSProject\project\VSServer\VSServer\bin\Debug\VSServer.pdb
+D:\VSProject\project\VSServer\VSServer\obj\Debug\VSServer.Form1.resources
+D:\VSProject\project\VSServer\VSServer\obj\Debug\VSServer.Properties.Resources.resources
+D:\VSProject\project\VSServer\VSServer\obj\Debug\VSServer.csproj.GenerateResource.Cache
+D:\VSProject\project\VSServer\VSServer\obj\Debug\VSServer.exe
+D:\VSProject\project\VSServer\VSServer\obj\Debug\VSServer.pdb
