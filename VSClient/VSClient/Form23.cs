@@ -34,6 +34,17 @@ namespace VSClient
             label2.Text = Tag as string;
         }
 
+        private static string[] strTea;
+
+        public static void getStrTea(string[] str)
+        {
+            strTea = new string[str.Length];
+            for (int i = 0; i < str.Length; i++)
+            {
+                strTea[i] = str[i];
+            }
+        }
+
         /*public void setdataGridView1(string[] str)//查询教师
         {
             dataGridView1.Rows.Clear();
@@ -86,6 +97,7 @@ namespace VSClient
         {
             string str = "查询教师@管理员@" + label2.Text.Trim();
             Form1.ClientSendMsg(str);
+            button8.Enabled = true;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -184,6 +196,16 @@ namespace VSClient
                 fm.Tag = label2.Text.Trim();
                 fm.Show();
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            for (int i = 2; i + 4 < strTea.Length; i += 5)
+            {
+                dataGridView1.Rows.Add(strTea[i], strTea[i + 1], strTea[i + 2], strTea[i + 3], strTea[i + 4]);
+            }
+            button8.Enabled = false;
         }
     }
 }

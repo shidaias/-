@@ -27,6 +27,17 @@ namespace VSClient
             label4.Text = Tag as string;
         }
 
+        private static string[] strStu;
+
+        public static void getStrStu(string[] str)
+        {
+            strStu = new string[str.Length];
+            for (int i = 0; i < str.Length; i++)
+            {
+                strStu[i] = str[i];
+            }
+        }
+
         /*public void setdataGridView1(string[] str)
         {
             dataGridView1.Rows.Clear();
@@ -68,6 +79,17 @@ namespace VSClient
         {
             string str = "查询学生@管理员@" + label4.Text.Trim();
             Form1.ClientSendMsg(str);
+            button4.Enabled = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            for (int i = 2; i + 2 < strStu.Length; i += 3)
+            {
+                dataGridView1.Rows.Add(strStu[i], strStu[i + 1], strStu[i + 2]);
+            }
+            button4.Enabled = false;
         }
     }
 }

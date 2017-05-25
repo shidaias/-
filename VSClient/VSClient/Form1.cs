@@ -29,6 +29,11 @@ namespace VSClient
         static Socket socketclient = null;
         static List<IPEndPoint> mlist = new List<IPEndPoint>();
 
+        //<span style = "font-family:KaiTi_GB2312;font-size:18px;" >
+        #region datagrideview数据绑定委托  
+        public delegate void InvokeHandler();
+        #endregion</span> 
+
         /// <summary>
         /// 接收服务端发来的信息
         /// </summary> 
@@ -218,21 +223,23 @@ namespace VSClient
         {
             if (str[1].Equals("教师"))
             {
+                Form22.getStrStu(str);
                 MessageBox.Show("查询成功");
-                Form22.dataGridView1.Rows.Clear();
+                /*Form22.dataGridView1.Rows.Clear();
                 for (int i = 2; i + 1 < str.Length; i += 2)
                 {
                     Form22.dataGridView1.Rows.Add(str[i], str[i + 1]);
-                }
+                }*/
             }
             else if (str[1].Equals("管理员"))
             {
+                Form231.getStrStu(str);
                 MessageBox.Show("查询成功");
-                Form231.dataGridView1.Rows.Clear();
+                /*Form231.dataGridView1.Rows.Clear();
                 for (int i = 2; i + 2 < str.Length; i += 3)
                 {
                     Form231.dataGridView1.Rows.Add(str[i], str[i + 1], str[i + 2]);
-                }
+                }*/
             }
             else
             {
@@ -247,21 +254,23 @@ namespace VSClient
         {
             if (str[1].Equals("学生"))
             {
+                Form21.getStrTea(str);
                 MessageBox.Show("查询成功");
-                Form21.dataGridView1.Rows.Clear();
+                /*Form21.dataGridView1.Rows.Clear();
                 for (int i = 2; i + 2 < str.Length; i += 3)
                 {
                     Form21.dataGridView1.Rows.Add(str[i], str[i + 1], str[i + 2]);
-                }
+                }*/
             }
             else if (str[1].Equals("管理员"))
             {
+                Form23.getStrTea(str);
                 MessageBox.Show("查询成功");
-                Form23.dataGridView1.Rows.Clear();
+                /*Form23.dataGridView1.Rows.Clear();
                 for (int i = 2; i + 4 < str.Length; i += 5)
                 {
                     Form23.dataGridView1.Rows.Add(str[i], str[i + 1], str[i + 2], str[i + 3], str[i + 4]);
-                }
+                }*/
             }
             else
             {
@@ -276,22 +285,24 @@ namespace VSClient
         {
             if (str[1].Equals("教师"))
             {
+                Form22.getStrText(str);
                 MessageBox.Show("查询成功");
-                Form22.dataGridView2.Rows.Clear();
+                /*Form22.dataGridView2.Rows.Clear();
                 for (int i = 2; i + 6 < str.Length; i += 7)
                 {
                     Form22.dataGridView2.Rows.Add(str[i], str[i + 1], str[i + 2], str[i + 3], str[i + 4], str[i + 5], str[i + 6]);
-                }
+                }*/
             }
             else if (str[1].Equals("管理员"))
             {
+                Form232.getStrText(str);
                 MessageBox.Show("查询成功");
-                Form232.dataGridView1.Rows.Clear();
+                /*Form232.dataGridView1.Rows.Clear();
                 for (int i = 2; i + 7 < str.Length; i += 8)
                 {
                     Form232.dataGridView1.Rows.Add(str[i], str[i + 1], str[i + 2], str[i + 3], str[i + 4],
                        str[i + 5], str[i + 6], str[i + 7]);
-                }
+                }*/
             }
             else
             {

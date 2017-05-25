@@ -34,6 +34,27 @@ namespace VSClient
             label2.Text = Tag as string;
         }
 
+        private static string[] strStu;
+        private static string[] strText;
+
+        public static void getStrStu(string[] str)
+        {
+            strStu = new string[str.Length];
+            for (int i = 0; i < str.Length; i++)
+            {
+                strStu[i] = str[i];
+            }
+        }
+
+        public static void getStrText(string[] str)
+        {
+            strText = new string[str.Length];
+            for (int i = 0; i < str.Length; i++)
+            {
+                strText[i] = str[i];
+            }
+        }
+
         /*public void setdataGridView1(string[] str)//查询学生
         {
             dataGridView1.Rows.Clear();
@@ -113,12 +134,14 @@ namespace VSClient
         {
             string str = "查询学生@教师@" + label2.Text.Trim();
             Form1.ClientSendMsg(str);
+            button7.Enabled = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             string str = "查询题库@教师@" + label2.Text.Trim();
             Form1.ClientSendMsg(str);
+            button8.Enabled = true;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -163,6 +186,27 @@ namespace VSClient
                 fm.Tag = label2.Text.Trim();
                 fm.Show();
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            for (int i = 2; i + 1 < strStu.Length; i += 2)
+            {
+                dataGridView1.Rows.Add(strStu[i], strStu[i + 1]);
+            }
+            button7.Enabled = false;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            dataGridView2.Rows.Clear();
+            for (int i = 2; i + 6 < strText.Length; i += 7)
+            {
+                dataGridView2.Rows.Add(strText[i], strText[i + 1], strText[i + 2],
+                    strText[i + 3], strText[i + 4], strText[i + 5], strText[i + 6]);
+            }
+            button8.Enabled = false;
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,8 +54,10 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(dataGridView2)).BeginInit();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,15 +80,15 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            dataGridView1.Location = new System.Drawing.Point(15, 69);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 23;
-            dataGridView1.Size = new System.Drawing.Size(243, 179);
-            dataGridView1.TabIndex = 2;
+            this.dataGridView1.Location = new System.Drawing.Point(15, 68);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(243, 179);
+            this.dataGridView1.TabIndex = 2;
             // 
             // Column1
             // 
@@ -177,8 +179,8 @@
             // 
             // dataGridView2
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column3,
             this.Column4,
             this.Column5,
@@ -186,11 +188,11 @@
             this.Column7,
             this.Column8,
             this.Column9});
-            dataGridView2.Location = new System.Drawing.Point(15, 293);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowTemplate.Height = 23;
-            dataGridView2.Size = new System.Drawing.Size(423, 147);
-            dataGridView2.TabIndex = 24;
+            this.dataGridView2.Location = new System.Drawing.Point(15, 293);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.Size = new System.Drawing.Size(423, 147);
+            this.dataGridView2.TabIndex = 24;
             // 
             // Column3
             // 
@@ -235,9 +237,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(83, 37);
+            this.button2.Location = new System.Drawing.Point(72, 37);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(47, 23);
             this.button2.TabIndex = 25;
             this.button2.Text = "查询";
             this.button2.UseVisualStyleBackColor = true;
@@ -265,24 +267,48 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(183, 37);
+            this.button6.Location = new System.Drawing.Point(196, 37);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(62, 23);
             this.button6.TabIndex = 28;
             this.button6.Text = "编辑学生";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Enabled = false;
+            this.button7.Location = new System.Drawing.Point(125, 37);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(65, 23);
+            this.button7.TabIndex = 29;
+            this.button7.Text = "打印数据";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Enabled = false;
+            this.button8.Location = new System.Drawing.Point(96, 264);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 30;
+            this.button8.Text = "打印数据";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Form22
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
-            this.Controls.Add(dataGridView2);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -292,7 +318,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(dataGridView1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
@@ -300,8 +326,8 @@
             this.Text = "教师界面";
             this.Activated += new System.EventHandler(this.Form22_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form22_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,7 +359,9 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        public static System.Windows.Forms.DataGridView dataGridView1;
-        public static System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button8;
     }
 }

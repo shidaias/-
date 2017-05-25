@@ -22,6 +22,17 @@ namespace VSClient
             TextBox.CheckForIllegalCrossThreadCalls = false;
         }
 
+        private static string[] strText;
+
+        public static void getStrText(string[] str)
+        {
+            strText = new string[str.Length];
+            for (int i = 0; i < str.Length; i ++)
+            {
+                strText[i] = str[i];
+            }
+        }
+
         /*public void setdataGridView1(string[] str)//查询题库
         {
             dataGridView1.Rows.Clear();
@@ -93,6 +104,18 @@ namespace VSClient
         {
             string str = "查询题库@管理员@" + label2.Text.Trim();
             Form1.ClientSendMsg(str);
+            button4.Enabled = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            for (int i = 2; i + 7 < strText.Length; i += 8)
+            {
+                dataGridView1.Rows.Add(strText[i], strText[i + 1], strText[i + 2], strText[i + 3], strText[i + 4],
+                   strText[i + 5], strText[i + 6], strText[i + 7]);
+            }
+            button4.Enabled = false;
         }
     }
 }
