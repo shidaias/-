@@ -11,7 +11,6 @@ D:\-\VSServer\VSServer\obj\Debug\VSServer.exe
 D:\-\VSServer\VSServer\obj\Debug\VSServer.pdb
 D:\-\VSServer\VSServer\bin\Debug\VSServer.exe
 D:\-\VSServer\VSServer\bin\Debug\VSServer.pdb
-D:\-\VSServer\VSServer\obj\Debug\VSServer.csprojResolveAssemblyReference.cache
 D:\-\VSServer\VSServer\obj\Debug\VSServer.Form1.resources
 D:\-\VSServer\VSServer\obj\Debug\VSServer.Properties.Resources.resources
 D:\-\VSServer\VSServer\obj\Debug\VSServer.csproj.GenerateResource.Cache

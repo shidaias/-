@@ -304,9 +304,18 @@ namespace VSServer
         /// <summary>
         private bool StuLogin(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
                     ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "select 学号, 密码 from 学生 where 学号 ='" + str[2] + "'";
             try
             {
@@ -338,9 +347,18 @@ namespace VSServer
         /// <summary>
         private bool TeaLogin(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
                     ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "select 编号, 密码 from 教师 where 编号 ='" + str[2] + "'";
             try
             {
@@ -372,9 +390,18 @@ namespace VSServer
         /// <summary>
         private bool AdmLogin(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
                     ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "select 编号, 密码 from 管理员 where 编号 ='" + str[2] + "'";
             try
             {
@@ -414,9 +441,18 @@ namespace VSServer
         /// </summary>
         private bool StuDeleteAdm(string str)
         {
-            SqlConnection myCon = new SqlConnection
-                ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
+                    ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "delete from 学生 where 学号 ='" + str + "'";
             try
             {
@@ -437,9 +473,18 @@ namespace VSServer
         /// </summary>
         private bool StuDeleteTea(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
-                ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
+                    ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "select 班级 form 学生 where 学号 = '" + str[3] + "'";
             string sqlStr0 = "select 班级 from 教师 where 编号 = '" + str[2] + "'";
             try
@@ -488,9 +533,18 @@ namespace VSServer
         /// </summary>
         private bool TeaDelete(string str)
         {
-            SqlConnection myCon = new SqlConnection
-                ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
+                    ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "delete from 教师 where 编号 ='" + str + "'";
             try
             {
@@ -511,9 +565,18 @@ namespace VSServer
         /// </summary>
         private bool TextDeleteTea(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
-                ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
+                    ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "select 科目 form 题库 where 编号 = '" + str[3] + "'";
             string sqlStr0 = "select 科目 from 教师 where 编号 = '" + str[2] + "'";
             try
@@ -562,9 +625,18 @@ namespace VSServer
         /// </summary>
         private bool TextDeleteAdm(string str)
         {
-            SqlConnection myCon = new SqlConnection
-                ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
+                    ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "delete from 题库 where 编号 ='" + str + "'";
             try
             {
@@ -585,9 +657,18 @@ namespace VSServer
         /// </summary>
         private bool TextClear()
         {
-            SqlConnection myCon = new SqlConnection
-                ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
+                    ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "truncate table 题库";
             try
             {
@@ -619,9 +700,18 @@ namespace VSServer
         /// </summary>
         private bool StuInsertTea(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
-                ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
+                    ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "select 班级 from 教师 where 编号 = '" + str[2] + "'";
             string cnum = "";
             SqlDataAdapter da = new SqlDataAdapter(sqlStr, myCon);
@@ -658,9 +748,18 @@ namespace VSServer
         /// </summary>
         private bool StuInsertAdm(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
-                ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
+                    ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "insert into 学生 (学号, 密码, 姓名, 班级) values ('" + str[2] + "','"
                 + 123456 + "','" + str[3] + "','" + str[4] + "')";
             try
@@ -682,9 +781,18 @@ namespace VSServer
         /// </summary>
         private bool TeaInsert(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
-                ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
+                    ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "insert into 教师 (编号, 密码, 姓名, 班级, 科目, 电话) values ('" + str[2] + "','"
                 + 123456 + "','" + str[3] + "','" + str[4] + "','" + str[5] + "','" + str[6] + "')";
             try
@@ -706,9 +814,18 @@ namespace VSServer
         /// </summary>
         private bool StuModify(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
                     ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "select 密码 from 学生 where 学号 ='" + str[2] + "'";
             try
             {
@@ -747,9 +864,18 @@ namespace VSServer
         /// </summary>
         private bool TeaModify(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
                     ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "select 编号, 密码 from 教师 where 编号 ='" + str[2] + "'";
             SqlDataAdapter da = new SqlDataAdapter(sqlStr, myCon);
             DataSet ds = new DataSet();
@@ -788,9 +914,18 @@ namespace VSServer
         /// </summary>
         private bool AdmModify(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
                     ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "select 编号, 密码 from 管理员 where 编号 ='" + str[2] + "'";
             SqlDataAdapter da = new SqlDataAdapter(sqlStr, myCon);
             DataSet ds = new DataSet();
@@ -831,9 +966,18 @@ namespace VSServer
         /// </summary>
         private string StuSelectStu(string str)
         {
-            SqlConnection myCon = new SqlConnection
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
                     ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return "@False";
+            }
             string select = "";
             string sqlStr = "select 学号, 姓名 from 学生 where 班级 in ( select 班级 from 学生 where 学号 = '" + str + "')";
             SqlDataAdapter da = new SqlDataAdapter(sqlStr, myCon);
@@ -860,9 +1004,18 @@ namespace VSServer
         /// </summary>
         private string StuSelectTea(string str)
         {
-            SqlConnection myCon = new SqlConnection
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
                     ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return "@False";
+            }
             string select = "";
             string sqlStr = "select 学号, 姓名 from 学生 where 班级 in ( select 班级 from 教师 where 编号 = '" + str + "')";
             SqlDataAdapter da = new SqlDataAdapter(sqlStr, myCon);
@@ -889,9 +1042,18 @@ namespace VSServer
         /// </summary>
         private string StuSelectAbm(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
                     ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return "@False";
+            }
             string select = "";
             string sqlStr = "select 学号, 姓名, 班级 from 学生";
             SqlDataAdapter da = new SqlDataAdapter(sqlStr, myCon);
@@ -919,9 +1081,18 @@ namespace VSServer
         /// </summary>
         private string TeaSelectStu(string str)
         {
-            SqlConnection myCon = new SqlConnection
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
                     ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return "@False";
+            }
             string select = "";
             string sqlStr = "select 科目, 姓名, 电话 from 教师 where 班级 in ( select 班级 from 学生 where 学号 = '" + str + "')";
             SqlDataAdapter da = new SqlDataAdapter(sqlStr, myCon);
@@ -949,9 +1120,18 @@ namespace VSServer
         /// </summary>
         private string TeaSelectAbm(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
                     ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return "@False";
+            }
             string select = "";
             string sqlStr = "select 编号, 姓名, 科目, 班级, 电话 from 教师";
             SqlDataAdapter da = new SqlDataAdapter(sqlStr, myCon);
@@ -980,9 +1160,18 @@ namespace VSServer
         /// </summary>
         private string TextSelectTea(string str)
         {
-            SqlConnection myCon = new SqlConnection
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
                     ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return "@False";
+            }
             string select = "";
             string sqlStr = "select 编号, 题目, A, B, C, D, 答案 from 题库 where 科目 in ( select 科目 from 教师 where 编号 = '" + str + "')";
             SqlDataAdapter da = new SqlDataAdapter(sqlStr, myCon);
@@ -1011,9 +1200,18 @@ namespace VSServer
         /// </summary>
         private string TextSelectAbm(string str)
         {
-            SqlConnection myCon = new SqlConnection
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
                     ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return "@False";
+            }
             string select = "";
             string sqlStr = "select 编号, 题目, A, B, C, D, 答案, 科目 from 题库";
             SqlDataAdapter da = new SqlDataAdapter(sqlStr, myCon);
@@ -1042,9 +1240,18 @@ namespace VSServer
         /// </summary>
         private bool TextAddTea(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
-                ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
+                    ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "select 科目 from 教师 where 编号 = '" + str[2] + "'";
             string project = "";
             try
@@ -1083,9 +1290,18 @@ namespace VSServer
         /// </summary>
         private bool TextAddAdm(string[] str)
         {
-            SqlConnection myCon = new SqlConnection
-                ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
+                    ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
             string sqlStr = "insert into 题库 (编号, 题目, A, B, C, D, 答案, 科目) values ('" + str[2] + "','"
                 + str[3] + "','" + str[4] + "','" + str[5] + "','" + str[6] + "','" + str[7] + "','" + str[8] + "','" + str[9] + "')";
             try
