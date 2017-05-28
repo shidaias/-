@@ -246,6 +246,10 @@ namespace VSServer
                     {
                         x = "生成考卷@" + str[1] + setText(str[1]);
                     }
+                    else if (str[0].Equals("生成答卷"))
+                    {
+                        x = "生成答卷@" + getText(str).ToString();
+                    }
                     else
                     {
                         x = "会话@无效传输";
@@ -273,9 +277,18 @@ namespace VSServer
         /// </summary>
         private string setText(string str)
         {
-            SqlConnection myCon = new SqlConnection
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
                     ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
-            myCon.Open();
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return "@False";
+            }
             string select = "";
             string sqlStr = "select top 10 * from 题库 where 科目 = '" + str +"' ORDER BY NEWID()";
             SqlDataAdapter da = new SqlDataAdapter(sqlStr, myCon);
@@ -297,6 +310,45 @@ namespace VSServer
             }
             myCon.Close();
             return select;
+        }
+
+        /// <summary>
+        /// 生成答卷
+        /// </summary>
+        private bool getText(string[] str)
+        {
+            SqlConnection myCon;
+            try
+            {
+                myCon = new SqlConnection
+                    ("Persist Security Info = False; User id = sa; pwd = 123456; database = vstext; server = .");
+                myCon.Open();
+            }
+            catch
+            {
+                textBox3.AppendText("未连接上数据库\r\n");
+                return false;
+            }
+            string sqlStr = "insert into 考卷 (学号, 科目, 题1编号, 题1答案, 题2编号, 题2答案, 题3编号, 题3答案," + 
+                " 题4编号, 题4答案, 题5编号, 题5答案, 题6编号, 题6答案, 题7编号, 题7答案, 题8编号, 题8答案," +
+                " 题9编号, 题9答案, 题10编号, 题10答案, 分数) values ('" + str[1] + "','" + str[2] + "','" + str[3] + "','"
+                + str[4] + "','" + str[5] + "','" + str[6] + "','" + str[7] + "','" + str[8] + "','" + str[9] + "','"
+                + str[10] + "','" + str[11] + "','" + str[12] + "','" + str[13] + "','" + str[14] + "','" + str[15] + "','"
+                + str[16] + "','" + str[17] + "','" + str[18] + "','" + str[19] + "','" + str[20] + "','" + str[21] + "','"
+                + str[22] + "','" + str[23] + "')";
+            try
+            {
+                SqlCommand addCMD = new SqlCommand(sqlStr, myCon);
+                addCMD.ExecuteNonQuery();
+                myCon.Close();
+                return true;
+            }
+            catch
+            {
+                textBox3.AppendText("异常2\r\n");
+                myCon.Close();
+                return false;
+            }
         }
 
         /// <summary>

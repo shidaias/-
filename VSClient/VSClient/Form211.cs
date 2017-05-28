@@ -31,7 +31,7 @@ namespace VSClient
 
         public static void getText(string[] str)
         {
-            type = str[1].Trim();
+            type = str[1];
             for (int i = 2, j = 0; i + 6 < str.Length && j < 10; i++, j++)
             {
                 num[j] = str[i++].Trim();
@@ -79,17 +79,24 @@ namespace VSClient
             if (i == 0)
             {
                 button1.Enabled = false;
-                button4.Enabled = false;
+                button2.Enabled = true;
             }
             else if (i == 9)
             {
+                button1.Enabled = true;
                 button2.Enabled = false;
-                button4.Enabled = true;
             }
             else
             {
                 button1.Enabled = true;
                 button2.Enabled = true;
+            }
+            if (i == 9 || answer0[9] != "")
+            {
+                button4.Enabled = true;
+            }
+            else
+            {
                 button4.Enabled = false;
             }
             //MessageBox.Show("测试变化");
@@ -136,10 +143,6 @@ namespace VSClient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            radioButton3.Checked = false;
-            radioButton4.Checked = false;
             getAnswer();
             i--;
             setText();
@@ -175,13 +178,54 @@ namespace VSClient
                     score += 10;
                 }
             }
-            MessageBox.Show("您的成绩为" + score);
+
+            string str = "生成答卷@" + label2.Text + "@" + type;
+            for (int i = 0; i < num.Length; i++)
+            {
+                str += "@" + num[i] + "@" + answer0[i];
+            }
+            str += "@" + score;
+            Form1.ClientSendMsg(str);
+
+            //恢复现场
+            i = 0;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = true;
+            button4.Enabled = false;
+            label3.Text = "题数";
+            label4.Text = "                             请认真作答";
+            label5.Text = "选项A";
+            label6.Text = "选项B";
+            label7.Text = "选项C";
+            label8.Text = "选项D";
+
+
+            bool isfind = false;
+            Hide();
+            foreach (Form fm in Application.OpenForms)
+            {
+                if (fm.Name == "Form2111")
+                {
+                    fm.Tag = label2.Text.Trim();
+                    fm.WindowState = FormWindowState.Normal;
+                    fm.Show();
+                    fm.Activate();
+                    return;
+                }
+            }
+            if (!isfind)
+            {
+                Form fm = new Form2111();
+                fm.Tag = label2.Text.Trim();
+                fm.Show();
+            }
+            Form2111.getText(text, answer, answer0, score);
+            //MessageBox.Show("您的成绩为" + score);
         }
 
         private void Form211_FormClosed(object sender, FormClosedEventArgs e)
         {
-            bool isfind = false;
-            Hide();
             foreach (Form fm in Application.OpenForms)
             {
                 if (fm.Name == "Form21")
@@ -192,12 +236,6 @@ namespace VSClient
                     fm.Activate();
                     return;
                 }
-            }
-            if (!isfind)
-            {
-                Form fm = new Form21();
-                fm.Tag = label2.Text.Trim();
-                fm.Show();
             }
         }
     }

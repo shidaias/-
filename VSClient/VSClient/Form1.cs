@@ -100,6 +100,10 @@ namespace VSClient
                         {
                             TextSet(str);
                         }
+                        else if (str[0].Equals("生成答卷"))
+                        {
+                            TextAdd(str[1]);
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -316,7 +320,7 @@ namespace VSClient
         }
 
         /// <summary>
-        /// 添加题库触发
+        /// 添加题库，答卷触发
         /// </summary>
         private void TextAdd(string str)
         {

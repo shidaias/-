@@ -143,8 +143,9 @@ namespace VSClient
             {
                 if (fm.Name == "Form211")
                 {
-                    fm.Tag = label2.Text.Trim();
+
                     fm.WindowState = FormWindowState.Normal;
+                    fm.Tag = label2.Text.Trim();
                     fm.Show();
                     fm.Activate();
                     return;
@@ -153,7 +154,7 @@ namespace VSClient
             if (!isfind)
             {
                 Form fm = new Form211();
-                fm.Tag = label2.Text.Trim();
+                fm.Tag = textBox3.Text.Trim();
                 fm.Show();
             }
         }
